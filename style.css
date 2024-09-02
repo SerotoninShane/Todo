@@ -1,12 +1,12 @@
 /* Define custom fonts */
 @font-face {
     font-family: 'Fox';
-    src: url('/Fonts/FoxAndBower.otf') format('opentype');
+    src: url('Fonts/FoxAndBower.otf') format('opentype');
 }
 
 @font-face {
     font-family: 'Sonora';
-    src: url('/Fonts/Sonorous-Rough.otf') format('opentype');
+    src: url('Fonts/Sonorous-Rough.otf') format('opentype');
 }
 
 /* Global styles */
