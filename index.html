@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="Wrapper 💪">
+            <a class="Hero 💪 Grit" href="../Home/index.html">Serotonin <span>Shane</span></a>
+            <div class="🧭 💪">
+                <a class="📍 📌" href="#Home">Schedule</a>
+                <a class="📍" href="../Plan/index.html">Goals</a>
+                <a class="📍" id="modalBtn">Contact</a>
+                <!-- <a class="📍 Grit"><img src="../Images/menu-icon.svg" alt="Menu Icon"></a> -->
+            </div>
+        </div>
+    </header>
+
+    <section class="Todo">
+      <div class="cont">
+
+        <div class="left">
+          <div class="navi">
+            <div>
+            <div>
+            <h2>TO-DO</h2>
+            <div id="today-date"></div>
+            <div class="search-box">
+              <input type="text" id="search-input" placeholder="Search">
+            </div>
+            </div>
+            <div class="tasks">
+              <h4>TASKS:</h4>
+              <div>
+                Upcoming <span class="badge upcoming">0</span>
+              </div>
+              <div>
+                In Progress <span class="badge total">0</span>
+              </div>
+              <div>
+                Overdue <span class="badge overdue">0</span>
+              </div>
+              <div>
+                Completed <span class="badge completed">0</span>
+              </div>
+            </div>
+            <div class="lists">
+              <h4>LISTS:</h4>
+              <div class="list-items">
+                <!-- Lists will be dynamically added here -->
+              </div>
+            </div>
+          </div>
+            <div class="list-input-container">
+              <button id="add-list-button">+</button>
+              <input type="text" id="new-list-input" placeholder="Enter New List">
+            </div>
+          </div>
+        </div>
+
+        <div class="middle">
+          <div id="todo-form">
+              <div class="input-container">
+                <button id="add-task">+</button>
+                  <input type="text" id="new-task" placeholder="Enter New Task">
+              </div>
+              
+          </div>
+          <ul id="todo-list"></ul>
+        </div>
+
+        <div class="right">
+          <div class="task-list">
+            <!-- Task list content -->
+          </div>
+          <button class="close-button"></button>
+        </div>
+
+      </div>
+    </section>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>

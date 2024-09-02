@@ -1,0 +1,629 @@
+/* Define custom fonts */
+@font-face {
+    font-family: 'Fox';
+    src: url('../Fonts/FoxAndBower.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'Sonora';
+    src: url('../Fonts/Sonorous-Rough.otf') format('opentype');
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sonora', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Body styles */
+body {
+    /* Format */
+    position: relative;
+    width: 100%;
+
+    /* Style */
+    color: #333;
+}
+  
+/* Header styles */
+header {
+    /* Format */
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    top: 0px;
+    width: inherit;
+    min-height: 120px;
+
+    /* Style */
+    background-color: #fff;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
+    z-index: 100;
+    transition: 1s;
+}
+
+header .Wrapper {
+    height: inherit;
+    padding-inline: 2rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .Hero {
+    font-size: 28px;
+    font-weight: 700;
+    font-family: 'Fox', sans-serif;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .Hero:hover {
+    color: #df312c;
+    cursor: pointer;
+    transition: .25s;
+}
+
+header span {
+    font-size: 14px;
+}
+
+.hidden {
+    top: -120px;
+}
+
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    border-radius: 10px; /* Makes the scrollbar rounded */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px; /* Makes the track rounded */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; /* Makes the handle rounded */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 10px; /* Ensures the handle remains rounded on hover */
+  }
+
+#hover-area {
+    position: fixed;
+    top: 0;
+    height: 30px; /* Adjust based on your preference */
+    width: 100%;
+    z-index: 999;
+}
+
+/* Anchor styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Flex container */
+.💪 {
+    display: flex;
+}
+
+/* Overlay styles */
+.🔳 {
+    /* Format */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    /* Style */
+    background-image: linear-gradient(90deg,rgba(0,0,0,.9),rgba(100, 100, 100, 0.2));
+    z-index: 2;
+}
+
+/* Navigation styles */
+.🧭 {
+    /* Format */
+    width: fit-content;
+    height: inherit;
+    flex-direction: row;
+    place-items: center;
+
+    /* Style */
+    list-style: none;
+}
+
+/* Navigation item styles */
+.📍 {
+    /* Format */
+    width: fit-content;
+    padding: .75rem;
+    margin: .5rem;
+    border-radius: .5rem;
+
+    /* Style */
+    background-color: white;
+    color: #333;
+    font-family: 'Fox', sans-serif;
+    transition: .25s;
+    font-size: 1.1rem;
+}
+
+.📍:nth-child(4){
+    display: none;
+    background-color: white;
+    width: 34px;
+    height: 34px;
+    position: relative;
+    object-fit:contain;
+}
+
+ul:hover .📍:not(:hover) {
+    transform: scale(1.05);
+}
+
+ul:has(.📍:hover) .📍:not(:hover) {
+    transform: scale(1);
+}
+
+.📍:hover {
+    opacity: .9;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Entire Container */
+.Todo {
+    max-width: 1150px;
+    max-height: 70vh;
+    background-color: white;
+    border-radius: 2rem;
+    margin: 156px auto 6rem;
+    box-shadow: 0 4px 20px 0 rgb(0 0 0 / 20%);
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.cont {
+    display: flex;
+    margin-inline: auto;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: space-between;
+    border-radius: 2rem;
+    height: 100%;
+}
+
+/* Left Section */
+
+.left {
+    background-color: #F4F4F4;
+    min-width: 260px;
+  }
+
+  .navi {
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .navi h4 {
+    margin-block-end: .5rem;
+  }
+
+  #today-date {
+    color: hsl(0, 0%, 50%);
+    font-size: 14px;
+  }
+  
+  .search-box input {
+    width: 100%;
+    padding-block: 1rem;
+    padding-inline: 2rem;
+    border: 1px solid hsl(0, 0%, 90%);
+    background-color: transparent;
+    border-radius: .5rem;
+    background-image: url('https://img.icons8.com/?size=100&id=82712&format=png&color=000000');
+    background-size: 1rem;
+    background-position: 6% 45%; 
+    background-repeat: no-repeat;
+    margin-block: 1rem;
+  }
+
+  .tasks > div,
+  .lists > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    font-size: 14px;
+    transition: 1s;
+    border-radius: .5rem ;
+  }
+
+  .badge {
+    background-color: hsl(0, 0%, 90%);
+    color: #000;
+    padding: 5px 8px;
+    border-radius: 4px;
+    width: 3.5vh;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    transition: 1s;
+  }
+
+  .tasks > div span + span,
+  .lists > div span + span {
+    margin-left: 10px;
+  }
+
+  .right .list-container {
+    margin-top: .5rem;
+  }
+
+  .list-items .list-container {
+    transition: 1s;
+  }
+
+  .list-items .list-container.active {
+    background-color: hsl(0, 0%, 90%);
+    cursor: pointer;
+  }
+
+  .list-items .list-container.active .badge{
+    background-color: white;
+  }
+
+  .tasks > div:hover,
+  .list-items .list-container:hover {
+    background-color: hsl(0, 0%, 90%);
+    cursor: pointer;
+  }
+
+  .tasks > div:hover .badge,
+  .list-items .list-container:hover .badge {
+    background-color: white;
+  }
+
+      /* Active filter state */
+    .tasks > div.active,
+    .list-items .list-container > div.active {
+        background-color: hsl(0, 0%, 90%);
+        cursor: pointer;
+    }
+
+    .tasks > div.active .badge,
+    .list-items .list-container > div.active .badge {
+        background-color: white;
+}
+
+  .lists {
+    height: 8vh;
+    margin-block: 1rem;
+  }
+
+  .list-input-container {
+    border: 1px solid hsl(0, 0%, 90%);
+    border-radius: .5rem;
+    height: 4vh;
+    display: flex;
+    z-index: 2;
+  }
+
+  #new-list-input {
+    border: hidden;
+    width: 100%;
+    padding-left: .5rem;
+    color: hsl(0, 0%, 50%);
+    background-color: transparent;
+    height: 100%;
+  }
+
+  #add-list-button {
+    position: relative;
+    left: 0;
+    width: 6vh; 
+    background-color: transparent;
+    color: #333;
+    font-size: 1.5rem;
+    border: 0px solid transparent;
+    cursor: pointer;
+    transition: .5s;
+    height: 100%;
+  }
+
+  .list-items {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    max-height: 11vh;
+    width: 105%;
+  }
+
+  .list-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border: 1px solid hsl(0, 0%, 90%);
+    padding: .1rem;
+    margin-bottom: .1rem;
+    width: 100%;
+    padding-left: .5rem;
+    color: hsl(0, 0%, 50%);
+    background-color: transparent;
+    border-radius: .5rem;
+    font-size: 14px;
+  }
+
+  .listSelect {
+    width: 100%;
+    border: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    color: hsl(0, 0%, 50%);
+  }
+
+  .list-container button{
+    background-color: transparent;
+    color: #333;
+    border: 0px solid transparent;
+    cursor: pointer;
+    margin-inline-end: .5rem;
+    color: rgb(219, 0, 0);
+  }
+
+  .list-container span{
+    display: grid;
+    place-items: center;
+  }
+
+  .list-container div{
+    display: flex;
+    flex-direction: row;
+  }
+
+
+/* Middle Section */
+
+.middle {
+    width: 100%;
+    height: 100%;
+}
+
+.input-container {
+    display: flex;
+    height: 5rem;
+    width: 100%;
+}
+
+#new-task {
+    width: calc(100% - 4rem);
+    border: 0px solid;
+}
+
+#new-task:focus {
+    outline: none;
+}
+
+#new-task:focus::placeholder {
+    color: transparent;
+  }
+#add-task {
+    position: relative;
+    left: 0;
+    width: 6vh; 
+    height: 100%;
+    background-color: transparent;
+    color: #333;
+    font-size: 1.5rem;
+    border: 0px solid;
+    cursor: pointer;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    transition: .5s;
+}
+
+#add-task:hover {
+    transform: scale(1.5);
+}
+
+
+#todo-list {
+    transition: 1s;
+    list-style: none;
+    padding: 0;
+    height: calc(70vh - 12rem);
+    overflow-y: scroll;
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vh;
+    font-size: 1rem;
+    border-bottom: 1px solid #ececec;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.todo-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+.todo-date {
+margin-top: 5px;
+font-size: 0.9em;
+color: #888;
+margin-inline: 5vh;
+}
+
+.color-indicator {
+    display: inline;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 5px;
+    vertical-align: middle;
+    transform: translateY(-2px);
+    margin-inline: 1vh;
+    border: 1px black solid;
+  }
+
+.color-input {
+    border: solid transparent 1px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 100%;
+}
+
+.todo-item:hover {
+    background-color: #ececec;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+
+.todo-item label {
+    flex: 1;
+    cursor: pointer;
+}
+
+
+/* Right Section */
+
+.right {
+    background-color: #F4F4F4;
+    width: 70%;
+    display: none;
+}
+
+
+.task-list {
+    height: 100%;
+    padding: 2rem;
+}
+
+.task {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: relative; /* Add this to position the close button relative to the task div */
+}
+
+.task p {
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.task-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.task-details span {
+    font-size: 12px;
+    color: #aaa;
+}
+
+.task-content h4 {
+  display: grid;
+  place-items: center;
+  margin-inline-start: .5rem;
+  margin-top: 4px;
+}
+
+.name-input {
+    width: 100%;
+    margin-block: .5rem;
+    padding-block: 1rem;
+    padding-left: .5rem;
+    border: 1px solid hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 50%);
+    background-color: transparent;
+    border-radius: .5rem;
+    height: 2vh;
+}
+
+.description-input {
+    position: relative;
+    width: 100%;
+    padding-block: 1rem;
+    padding-left: .5rem;
+    height: 14vh;
+    border: 1px solid hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 50%);
+    background-color: transparent;
+    border-radius: .5rem;
+    resize:none 
+  }
+
+  .due-date-input {
+    position: relative;
+    width: 100%;
+    padding-block: 1rem;
+    padding-inline: .5rem;
+    height: 2vh;
+    border: 1px solid hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 50%);
+    background-color: transparent;
+    border-radius: .5rem;
+    resize:none 
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.TaskViewButton {
+    border: 1px solid hsl(0, 0%, 90%);
+    color: hsl(0, 0%, 50%);
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.TaskViewButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.close-button {
+    position: absolute;
+    top: -8px;
+    right: 0px;
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #888;
+}
