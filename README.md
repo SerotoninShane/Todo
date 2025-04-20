@@ -1,4 +1,4 @@
-![Todo Image](../Todo.png)
+![Todo Image](/Todo.png)
 
 
 # Todo List App
