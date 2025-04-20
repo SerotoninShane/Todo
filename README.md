@@ -1,3 +1,6 @@
+![Todo Image](./Todo Image.png)
+
+
 # Todo List App
 
 This JavaScript application provides an interactive todo list interface with features for managing tasks, categorizing them by lists, and viewing their details. The application includes functionalities for adding, deleting, and sorting tasks, as well as managing and filtering by lists.
